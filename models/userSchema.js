@@ -7,8 +7,8 @@ const userSchema = new mongoose.Schema({
   userType: {
     type: String,
 
-    enum: ["child", "teacher"],
-    default: "child", // Only "child" or "teacher" is allowed as the value
+    enum: ["kid", "teacher", "parent"],
+    default: "kid", // Only "kid" or "teacher" is allowed as the value
   },
   firstName: {
     type: String,
@@ -44,6 +44,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+
   ageGroup: {
     type: String,
     required: false,
@@ -51,6 +52,38 @@ const userSchema = new mongoose.Schema({
   teacherId: {
     type: Number,
     required: true,
+  },
+  addressLine1: {
+    type: String,
+    required: false,
+  },
+  addressLine2: {
+    type: String,
+    required: false,
+  },
+  zipCode: {
+    type: Number,
+    required: false,
+  },
+  city: {
+    type: String,
+    required: false,
+  },
+  state: {
+    type: String,
+    required: false,
+  },
+  country: {
+    type: String,
+    required: false,
+  },
+  image: {
+    type: String,
+    required: false,
+  },
+  parentEmail: {
+    type: String,
+    required: false,
   },
 
   tokens: [
